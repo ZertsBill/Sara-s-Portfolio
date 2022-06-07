@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<header>
+<title>Sara's Portfolio</title>
+<link href="navbar.css" rel="stylesheet" type="text/css"/> 
+</header>
+
+<body class="navbar-bkg">
+<nav class="mainmenu">
+<ul class="navbar">
+<li><a href="navbar1.html">Start</a></li>
+<li><a href="navbar2.html">About Me</a></li>
+<li><a href="navbar3.html">My Projects</a></li>
+<li><a href="navbar4.html">Canvas</a></li>
+<li><a href="navbar5.html">Socials</a></li>
+</ul>
+</nav>
+<br>
+<h3>Start</h3>
+<p>Hi, my name is Sara Bill and this is my portfolio. Under this text is a drag and drop of my school's logo! Enjoy :)</p>
+
+<details>
+<summary>Drag & Drop</summary>
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+  
+#div1 {
+width: 205px;
+height: 205px;
+padding: 7px;
+border: 1px solid #1a25bd;
+background-color:black
+}
+</style>
+<script>
+function allowDrop(ev) {
+ev.preventDefault();
+}
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+  
+<p>Drag the Amerikanska-Gymnasiet image into the square:</p>
+  
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="https://www.amerikanskagymnasiet.se/14546_wp-uploads/2017/04/video_overlay_logo.png" draggable="true" ondragstart="drag(event)" width="200" height="200">
+</details>
+
+</body>
+</html>
